@@ -16,7 +16,7 @@ public class Uzi : Weapon
         _shotCount++;
 
         if (_shotCount != _maxShotCount)
-            Invoke("MultiShot", _delay);
+            Invoke(nameof(MultiShot), _delay);
     }
 
     public override void Shot(Transform shotPoint)
@@ -27,6 +27,6 @@ public class Uzi : Weapon
         Instantiate(Bullet, shotPoint.position, Quaternion.identity);
         _shotCount++;
 
-        Invoke("MultiShot", _delay);
+        Invoke(nameof(MultiShot), _delay);
     }
 }
